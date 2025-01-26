@@ -24,18 +24,12 @@ prompt_session = PromptSession(
     })
 )
 
-# --------------------------------------------------------------------------------
-# 1. Configure OpenAI client and load environment variables
-# --------------------------------------------------------------------------------
 load_dotenv()  # Load environment variables from .env file
 client = OpenAI(
     api_key=os.getenv("DEEPSEEK_KEY"),
     base_url="https://api.deepseek.com"
 )  # Configure for DeepSeek API
 
-# --------------------------------------------------------------------------------
-# 2. Define our schema using Pydantic for type safety
-# --------------------------------------------------------------------------------
 class FileToCreate(BaseModel):
     path: str
     content: str
@@ -115,9 +109,6 @@ system_PROMPT = dedent("""\
     Remember: You're a senior engineer - be thorough, precise, and thoughtful in your solutions.
 """)
 
-# --------------------------------------------------------------------------------
-# 4. Helper functions 
-# --------------------------------------------------------------------------------
 
 def read_local_file(file_path: str) -> str:
     """Return the text content of a local file."""
