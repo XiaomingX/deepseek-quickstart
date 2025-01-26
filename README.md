@@ -1,8 +1,6 @@
-### DeepSeek 工程师助手 🐋
-
+### DeepSeek 快速开始教程 🐋
 #### 概述
-
-这个仓库包含一个强大的编码助手应用，集成 DeepSeek API，能够处理用户对话并生成结构化的 JSON 响应。用户可以通过命令行界面读取本地文件内容、创建新文件，并实时修改现有文件。
+ - 这个仓库包含一个强大的编码助手应用，集成 DeepSeek API，能够处理用户对话并生成结构化的 JSON 响应。用户可以通过命令行界面读取本地文件内容、创建新文件，并实时修改现有文件。
 
 #### 主要功能
 
@@ -40,30 +38,35 @@
    - 输入 "exit" 或 "quit" 退出会话。
 
 #### 快速入门
+0. 如果自己还没有DEEPSEEK_KEY，可以在https://api-docs.deepseek.com/ 花5分钟注册并申请一个，通常官方会提供10元到新账号里。
 
 1. 配置 .env 文件，并添加 DeepSeek API 密钥：
    ```plaintext
-   DEEPSEEK_API_KEY=你的_api_key
+   DEEPSEEK_KEY=你的_api_key
    ```
 
 2. 安装依赖并运行（选择其中一种方式）：
 
    - **使用 pip 安装**：
      ```bash
+     git clone --depth 1 https://github.com/XiaomingX/deepseek-quickstart
      pip install -r requirements.txt
      python3 main.py
      ```
 
 3. 体验多行流式响应、使用 "/add path/to/file" 读取文件内容，并在批准后精确编辑文件。
 
-#### 推理版（r1.py）
+#### 推理版（main-r1.py）
 
-新增 `r1.py` 脚本，采用 DeepSeek 推理模型（`deepseek-reasoner`），支持“思维链”（CoT）推理：
+新增 `main-r1.py` 脚本，采用 DeepSeek 推理模型（`deepseek-reasoner`），支持“思维链”（CoT）推理：
 
 - 展示推理过程，然后给出最终答案。
 - 保留所有文件操作和差异编辑功能。
 - 显示推理过程，并仅记录最终结论。
 
-使用 `python3 r1.py` 或 `uv run r1.py` 启动，享受推理过程增强体验。
+使用 `python3 main-r1.py`启动，享受推理过程增强体验。
 
 > **注意**：这是 xiaomingx 开发的实验项目，旨在测试 DeepSeek v3 API 的新功能，作为快速原型使用时请注意。
+
+# 更多官方材料
+ - 我也在探索中，官方仓库地址是：https://github.com/deepseek-ai
